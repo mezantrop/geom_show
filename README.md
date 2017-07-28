@@ -4,6 +4,8 @@ Simple scripts to parse FreeBSD GEOM configuration and show information about di
 - **geom_show.awk** is the awk-script which makes the job of parsing sysctl kern.geom.confxml variable
 - **geom_show.sh** is the wrapper to make things simpler.
 
+See https://mezzantrop.wordpress.com/portfolio/geom_show/ for addition information.
+
 ### Examples
 ```
 zmey@fbsd:~ % ./geom_show.sh -l -c DISK -s ";"
