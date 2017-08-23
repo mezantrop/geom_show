@@ -1,5 +1,5 @@
 # geom_show
-Simple scripts to parse FreeBSD GEOM configuration and show information about disks, partitions, volumes and etc.
+Simple scripts to parse FreeBSD GEOM configuration (sysctl -n kern.geom.conftxt or sysctl -n kern.geom.confxml) and show information about disks, partitions, volumes and etc.
 
 - **geom_show.awk** is the awk-script which makes the job of parsing sysctl kern.geom.confxml variable
 - **geom_show.sh** is the wrapper to make things simpler.
