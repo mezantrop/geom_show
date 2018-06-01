@@ -7,7 +7,9 @@
 # this stuff is worth it, you can buy me a beer in return Mikhail Zakharov
 # -----------------------------------------------------------------------------
 
-# SAS addresses to /dev/daXXs with drive sizes + drive serials and vendor info
+# SAS addresses to /dev/daXXs with drive sizes + drive serials and vendor info.
+# Output is sorted by Serial number to group same drives together in case they 
+# have several SAS connections.
 #
 # sas2da.sh depends on geom_show.sh: https://github.com/mezantrop/geom_show
 #
