@@ -23,7 +23,7 @@ PART ada0p2 24695537664 512 0 544768 1064 48234535 2 freebsd-ufs
 PART ada0p1 524288 512 0 20480 40 1063 1 freebsd-boot
 ```
 
-- **sas2da.sh** translates SAS addresses to /dev/daXXs with drive sizes + drive serials and vendor info. It depends on geom_show.sh. Output is sorted by Serial number to group same drives together in case they have several SAS connections.
+- **sas2da.sh** translates SAS addresses to /dev/daXXs with drive sizes + drive serials and vendor info. It depends on geom_show.sh. Output is sorted by "Serial numbers" to group the same drives together in case they have several SAS connections.
 
 ### Examples
 ```
