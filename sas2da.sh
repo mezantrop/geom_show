@@ -14,6 +14,7 @@
 # sas2da.sh depends on geom_show.sh: https://github.com/mezantrop/geom_show
 #
 # 2018/06/01    v0.1    Initial
+# 2018/06/02    v0.2    Fixed the bug while "camcontrol smpphylist" parsing 
 #
 
 GEOM_SHOW="./geom_show.sh"
@@ -36,9 +37,16 @@ scbus_targets=`camcontrol devlist |
 
 da_addr=`mktemp /tmp/get_drives.XXX`
 printf "$scbus_targets\n" | while read bus target; do
-        camcontrol smpphylist "$bus:$target" -l -q 2>/dev/null |
+        camcontrol smpphylist "$bus:$target" -l -q 2>/dev/null | 
                 grep -v 'ses' | 
-                awk 'BEGIN{FS="0x|  <.*>|[(,)]"} {print $4, $2}' 
+                awk 'BEGIN {FS="0x|<.*>"}
+                        {
+                                match($3, "da[0-9][0-9]");
+                                if (RSTART) {
+                                        da=substr($3, RSTART, RLENGTH);
+                                        print(da, $2)
+                                }
+                        }'
 done | sort > $da_addr
 # da0 5000cca2612b0b0d
 # da1 5000cca2612b0b0e
