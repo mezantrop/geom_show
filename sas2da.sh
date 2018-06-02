@@ -8,8 +8,8 @@
 # -----------------------------------------------------------------------------
 
 # SAS addresses to /dev/daXXs with drive sizes + drive serials and vendor info.
-# Output is sorted by Serial number to group same drives together in case they 
-# have several SAS connections.
+# Output is sorted by "Serial numbers" to group the same drives together 
+# in case they have several SAS connections.
 #
 # sas2da.sh depends on geom_show.sh: https://github.com/mezantrop/geom_show
 #
