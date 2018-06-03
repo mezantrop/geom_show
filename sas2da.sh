@@ -14,12 +14,13 @@
 # sas2da.sh depends on geom_show.sh: https://github.com/mezantrop/geom_show
 #
 # 2018/06/01    v0.1    Initial
-# 2018/06/02    v0.2    Fixed the bug while "camcontrol smpphylist" parsing 
+# 2018/06/02    v0.2    Fixed the bug while "camcontrol smpphylist" parsing
+# 2018/06/03    v0.3    Monor changes and bugfixes
 #
 
 GEOM_SHOW="./geom_show.sh"
 
-gs=`mktemp /tmp/get_drives.XXX`
+gs=`mktemp /tmp/sas2da.XXX`
 $GEOM_SHOW -l -c DISK | awk -F, '{print $2, $3, $10, $11}' | sort > $gs
 # Provider Mediasize Ident Description
 # da0 8001563222016 VJGSNV0X HGST HUH728080AL5204
@@ -35,7 +36,7 @@ scbus_targets=`camcontrol devlist |
 # 12  28 
 # ...
 
-da_addr=`mktemp /tmp/get_drives.XXX`
+da_addr=`mktemp /tmp/sas2da.XXX`
 printf "$scbus_targets\n" | while read bus target; do
         camcontrol smpphylist "$bus:$target" -l -q 2>/dev/null | 
                 grep -v 'ses' | 
