@@ -41,7 +41,7 @@ printf "$scbus_targets\n" | while read bus target; do
                 grep -v 'ses' | 
                 awk 'BEGIN {FS="0x|<.*>"}
                         {
-                                match($3, "da[0-9][0-9]");
+                                match($3, "da[0-9]+");
                                 if (RSTART) {
                                         da=substr($3, RSTART, RLENGTH);
                                         print(da, $2)
