@@ -1,3 +1,5 @@
+# Warning! This project has been migrated to GitLab with the same name.
+
 # geom_show
 Simple scripts to parse FreeBSD GEOM configuration (sysctl -n kern.geom.conftxt or sysctl -n kern.geom.confxml) and show information about disks, partitions, volumes and etc.
 
