@@ -1,5 +1,7 @@
 # Warning! This project has been migrated to GitLab with the same name.
 
+<a href="https://www.buymeacoffee.com/mezantrop" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+
 # geom_show
 Simple scripts to parse FreeBSD GEOM configuration (sysctl -n kern.geom.conftxt or sysctl -n kern.geom.confxml) and show information about disks, partitions, volumes and etc.
 
